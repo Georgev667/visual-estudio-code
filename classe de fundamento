@@ -1,0 +1,90 @@
+class Estudiante:
+    def __init__(self, nombre, documento, carrera, sexo):
+        self.nombre = nombre
+        self.documento = documento
+        self.carrera = carrera
+        self.sexo = sexo
+
+    def editar(self):
+        print("Editando estudiante...")
+
+    def imprimir(self):
+        print(f"Nombre: {self.nombre}")
+        print(f"Documento: {self.documento}")
+        print(f"Carrera: {self.carrera}")
+        print(f"Sexo: {self.sexo}")
+
+    def eliminar(self):
+        print("Eliminando estudiante...")
+
+    def agregar(self):
+        print("Agregando estudiante...")
+
+class Producto:
+    def __init__(self, descripcion, cantidad, valor, tipo):
+        self.descripcion = descripcion
+        self.cantidad = cantidad
+        self.valor = valor
+        self.tipo = tipo
+
+    def editar(self):
+        print("Editando producto...")
+
+    def imprimir(self):
+        print(f"Descripción: {self.descripcion}")
+        print(f"Cantidad: {self.cantidad}")
+        print(f"Valor: {self.valor}")
+        print(f"Tipo: {self.tipo}")
+
+    def eliminar(self):
+        print("Eliminando producto...")
+
+    def agregar(self):
+        print("Agregando producto...")
+
+class Docente:
+    def __init__(self, nombre, documento, carrera, sexo):
+        self.nombre = nombre
+        self.documento = documento
+        self.carrera = carrera
+        self.sexo = sexo
+
+    def editar(self):
+        print("Editando docente...")
+
+    def imprimir(self):
+        print(f"Nombre: {self.nombre}")
+        print(f"Documento: {self.documento}")
+        print(f"Carrera: {self.carrera}")
+        print(f"Sexo: {self.sexo}")
+
+    def eliminar(self):
+        print("Eliminando docente...")
+
+    def agregar(self):
+        print("Agregando docente...")
+
+class Carros:
+    def __init__(self, modelo, carroseria, partes):
+        self.modelo = modelo
+        self.carroseria = carroseria
+        self.partes = partes
+
+    def editar(self):
+        print("Editando carro...")
+
+    def imprimir(self):
+        print(f"Modelo: {self.modelo}")
+        print(f"Carrosería: {self.carroseria}")
+        print(f"Partes: {self.partes}")
+
+    def eliminar(self):
+        print("Eliminando carro...")
+
+    def agregar(self):
+        print("Agregando carro...")
+
+class SuperMercado:
+    def __init__(self, nombre, atributo1):
+        self.nombre = nombre
+        self.atributo1 = atributo1
