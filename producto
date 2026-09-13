@@ -1,0 +1,48 @@
+class Producto:
+
+    def __init__(self, descripcion, cantidad, valor, tipo):
+
+        self.descripcion = descripcion
+
+        self.cantidad = cantidad
+
+        self.valor = valor
+
+        self.tipo = tipo
+
+    def editar(self):
+
+        print("Editando producto...")
+
+    def imprimir(self):
+
+        print(f"Descripción: {self.descripcion}")
+
+        print(f"Cantidad: {self.cantidad}")
+
+        print(f"Valor: {self.valor}")
+
+        print(f"Tipo: {self.tipo}")
+
+    def eliminar(self):
+
+        print("Eliminando producto...")
+
+
+    def agregar(self):
+        print("Agregando producto...")
+
+
+(Producto("Camisa", 10, 50000, "Ropa")).imprimir()
+(Producto("Camisa", 10, 50000, "Ropa")).editar()
+(Producto("Camisa", 10, 50000, "Ropa")).agregar()
+(Producto("Camisa", 10, 50000, "Ropa")).eliminar()
+      
+
+producto1 = Producto("Camisa", 10, 50000, "Ropa")
+
+producto1.imprimir()
+producto1.editar()
+producto1.agregar()
+producto1.eliminar()
+      
