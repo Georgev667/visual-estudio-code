@@ -1,0 +1,62 @@
+class mensaje:
+ def __init__(self,remitente,contenido,destinatario):
+        self.remitente = remitente
+        self.destinatario = destinatario
+        self.contenido = contenido
+
+ def mostrar_mensaje(self):
+        print(f"De: {self.remitente}") 
+        print(f"Para: {self.destinatario}")
+        print(f"Mensaje: {self.contenido}") 
+
+
+lista_mensajes = []
+
+print("Bienvenido al sistema de mensajería")
+
+opcion = ""
+
+while opcion != "3":
+
+    print("\nSeleccione una opción:")
+    print("1. Enviar mensaje")
+    print("2. Mostrar mensajes")
+    print("3. Salir")
+
+    opcion = input("Ingrese el número de la opción: ")
+
+    # ENVIAR MENSAJE
+    if opcion == "1":
+
+        remitente = input("Ingrese el remitente: ")
+        destinatario = input("Ingrese el destinatario: ")
+        contenido = input("Ingrese el contenido del mensaje: ")
+
+        mensaje_nuevo = mensaje(
+            remitente,
+            contenido,
+            destinatario
+        )
+
+        lista_mensajes.append(mensaje_nuevo)
+
+        print("Mensaje enviado correctamente.")
+
+    # MOSTRAR MENSAJES
+    elif opcion == "2":
+
+        if len(lista_mensajes) == 0:
+            print("No hay mensajes guardados.")
+
+        else:
+            print("\n--- MENSAJES GUARDADOS ---")
+
+            for mensaje in lista_mensajes:
+                mensaje.mostrar_mensaje()
+
+    # SALIR
+    elif opcion == "3":
+        print("Saliendo del sistema...")
+
+    else:
+        print("Opción no válida.")
