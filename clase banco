@@ -1,0 +1,64 @@
+class Banco:
+    def init__(self, nombre):
+        self.nombre = nombre
+        self.cuentas = {}
+
+    def agregar_cuenta(self, numero_cuenta, saldo_inicial=0):
+        if numero_cuenta not in self.cuentas:
+            self.cuentas[numero_cuenta] = saldo_inicial
+            print(f"Cuenta {numero_cuenta} agregada con saldo inicial de {saldo_inicial}.")
+        else:
+            print(f"La cuenta {numero_cuenta} ya existe.")
+
+    def depositar(self, numero_cuenta, monto):
+        if numero_cuenta in self.cuentas:
+            self.cuentas[numero_cuenta] += monto
+            print(f"Depósito de {monto} realizado en la cuenta {numero_cuenta}. Nuevo saldo: {self.cuentas[numero_cuenta]}.")
+        else:
+            print(f"La cuenta {numero_cuenta} no existe.")
+
+    def retirar(self, numero_cuenta, monto):
+        if numero_cuenta in self.cuentas:
+            if self.cuentas[numero_cuenta] >= monto:
+                self.cuentas[numero_cuenta] -= monto
+                print(f"Retiro de {monto} realizado de la cuenta {numero_cuenta}. Nuevo saldo: {self.cuentas[numero_cuenta]}.")
+            else:
+                print(f"Fondos insuficientes en la cuenta {numero_cuenta}. Saldo actual: {self.cuentas[numero_cuenta]}.")
+        else:
+            print(f"La cuenta {numero_cuenta} no existe.")
+
+    def consultar_saldo(self, numero_cuenta):
+        if numero_cuenta in self.cuentas:
+            print(f"Saldo de la cuenta {numero_cuenta}: {self.cuentas[numero_cuenta]}.")
+        else:
+            print(f"La cuenta {numero_cuenta} no existe.")
+
+class CuentaAhorro(Banco):
+    def __init__(self, nombre, tasa_interes):
+        super().__init__(nombre)
+        self.tasa_interes = tasa_interes
+
+    def calcular_interes(self, numero_cuenta):
+        if numero_cuenta in self.cuentas:
+            interes = self.cuentas[numero_cuenta] * self.tasa_interes
+            print(f"Interés generado para la cuenta {numero_cuenta}: {interes}.")
+            return interes
+        else:
+            print(f"La cuenta {numero_cuenta} no existe.")
+            return 0
+
+class CuentaCorriente(Banco):
+    
+    def __init__(self, nombre, limite_descubierto):
+        super().__init__(nombre)
+        self.limite_descubierto = limite_descubierto
+
+    def retirar(self, numero_cuenta, monto):
+        if numero_cuenta in self.cuentas:
+            if self.cuentas[numero_cuenta] + self.limite_descubierto >= monto:
+                self.cuentas[numero_cuenta] -= monto
+                print(f"Retiro de {monto} realizado de la cuenta {numero_cuenta}. Nuevo saldo: {self.cuentas[numero_cuenta]}.")
+            else:
+                print(f"Fondos insuficientes en la cuenta {numero_cuenta}. Saldo actual: {self.cuentas[numero_cuenta]}, límite de descubierto: {self.limite_descubierto}.")
+        else:
+            print(f"La cuenta {numero_cuenta} no existe.")                    

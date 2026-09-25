@@ -1,0 +1,13 @@
+notas = [5, 4, 1]
+notas.pop(-1)
+notas.append(2)
+estudiantes = ["camilo", "andrea", "jose", "maria"]
+estudiantes.remove("jose")
+suma = 0
+for nota in notas:
+        suma = suma + nota
+        print(suma)
+for estudiante in estudiantes:
+    print(estudiante)
+promedio = suma / len(notas)                
+print(len(notas))             
