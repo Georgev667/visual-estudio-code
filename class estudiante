@@ -1,0 +1,40 @@
+class estudiante:
+
+    def __init__(self, nombre):
+        self.nombre = nombre
+        self.notas = []
+
+    def agregar_nota(self, nota):
+        self.notas.append(nota)
+
+    def promedio(self):
+        if len(self.notas) == 0:
+            return 0
+        return sum(self.notas) / len(self.notas)
+
+estudiantes = [] 
+
+while True:
+    nombre = input("Ingrese el nombre del estudiante (o 'salir' para terminar): ")
+    if nombre.lower() == 'salir':
+        break
+
+    nuevo_estudiante = estudiante(nombre)
+
+    # ingresar notas
+    while True:
+        entrada_nota = input(f"Ingrese una nota para {nombre} (o 'salir' para terminar): ")
+        if entrada_nota.lower() == 'salir':
+            break
+        try:
+            nota = float(entrada_nota)
+            nuevo_estudiante.agregar_nota(nota)
+        except ValueError:
+            print("Nota inválida. Por favor, ingrese un número.")
+            continue
+
+    estudiantes.append(nuevo_estudiante)
+# mostrar resultados
+print("\n___promedio de los estudiantes___")
+for estudiante in estudiantes:
+    print(f"{estudiante.nombre}: Promedio = {estudiante.promedio()}")
